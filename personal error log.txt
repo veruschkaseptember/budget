@@ -1,0 +1,60 @@
+
+Error after running npm start 
+PS C:\Users\user\Desktop\Expense_Tracker> npm start
+npm ERR! code ENOENT
+npm ERR! syscall open
+npm ERR! path C:\Users\user\Desktop\Expense_Tracker/package.json
+npm ERR! errno -4058
+npm ERR! enoent ENOENT: no such file or directory, open 'C:\Users\user\Desktop\Expense_Tracker\package.json'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\user\AppData\Local\npm-cache\_logs\2022-01-18T09_26_56_087Z-debug.log
+PS C:\Users\user\Desktop\Expense_Tracker>
+
+Enoent means error no entry
+
+REMEMDER TO BE IN THE DIRECTORY!! cd expensetracker
+npm ERR!     C:\Users\user\AppData\Local\npm-cache\_logs\2022-01-18T08_57_42_524Z-debug.log
+PS C:\Users\user\Desktop\Expense_Tracker> npm start
+npm ERR! code ENOENT
+npm ERR! syscall open
+npm ERR! path C:\Users\user\Desktop\Expense_Tracker/package.json
+npm ERR! errno -4058
+PS C:\Users\user\Desktop\Expense_Tracker> npm install
+npm ERR! code ENOENT
+npm ERR! syscall open
+npm ERR! path C:\Users\user\Desktop\Expense_Tracker/package.json
+npm ERR! errno -4058
+npm ERR! enoent ENOENT: no such file or directory, open 'C:\Users\user\Desktop\Expense_Tracker\package.json'
+npm ERR! enoent This is related to npm not being able to find a file.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\user\AppData\Local\npm-cache\_logs\2022-01-18T09_52_01_329Z-debug.log
+Failed to compile.
+
+Module not found: Error: Cannot find file: 'App.js' does not match the corresponding name on disk: '.\src\app.js'.
+asset static/js/bundle.js 1.43 MiB [emitted] (name: main) 1 related asset
+asset index.html 1.67 KiB [emitted]
+asset asset-manifest.json 190 bytes [emitted]
+runtime modules 28.2 KiB 13 modules
+modules by path ./node_modules/ 1.33 MiB
+  modules by path ./node_modules/core-js-pure/ 24.8 KiB 49 modules
+  modules by path ./node_modules/webpack-dev-server/client/ 62.1 KiB 12 modules
+  modules by path ./node_modules/webpack/hot/*.js 4.4 KiB 4 modules
+  modules by path ./node_modules/react/ 119 KiB 4 modules
+  modules by path ./node_modules/html-entities/lib/*.js 115 KiB 4 modules
+  modules by path ./node_modules/scheduler/ 29.4 KiB 4 modules
+  modules by path ./node_modules/@pmmmwh/react-refresh-webpack-plugin/ 9.01 KiB 2 modules
+  modules by path ./node_modules/react-refresh/ 24.1 KiB 2 modules
+  modules by path ./node_modules/react-dom/ 959 KiB 2 modules
+  ./node_modules/ansi-html-community/index.js 4.26 KiB [built] [code generated]
+  ./node_modules/events/events.js 14 KiB [built] [code generated]
+  ./node_modules/object-assign/index.js 2.17 KiB [built] [code generated]
+./src/index.js 1.51 KiB [built] [code generated]
+
+ERROR in ./src/index.js 6:0-24
+Module not found: Error: Cannot find file: 'App.js' does not match the corresponding name on disk: '.\src\app.js'.
+
+webpack 5.66.0 compiled with 1 error in 9628 ms
+
