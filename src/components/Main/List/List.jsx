@@ -1,24 +1,38 @@
 import React from 'react';
-import { List as MUList, ListItem, ListItemAvatar, ListItemText, Avatar, ListItemSecondaryAction, IconButton, Slide } from '@material-ui/core';
+import { List as MUIList, ListItem, ListItemAvatar, ListItemText, Avatar, ListItemSecondaryAction, IconButton, Slide } from '@material-ui/core';
 import { Delete, MoneyOff } from '@material-ui/icons';
-import useStyles from '../List/styles';
+import useStyles from './styles';
 
 const List = () => {
     const classes = useStyles();
 
-    const transactions =[
-        { id: 1, }
+    const transactions = [
+        { id: 1, type: "Income", category: 'Salary', amount: 50, date: "Tues Feb 16" },
+        { id: 2, type: "Expense", category: 'Pets', amount: 300, date: "Wed Feb 17" },
+        { id: 3, type: "Income", category: 'Business', amount: 5000, date: "Tues Feb 16" }
     ];
 
     return (
-        <MUList dense={false} className={classes.list}>
+        <MUIList dense={false} className={classes.list}>
                 {transactions.map((transaction) => (
                     <Slide direction="down" in mountOnEnter unmountOnExit key={transaction.id}>
-
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar className={transaction.type === 'Income' ? classes.avatarIncome : classes.avatarExpense}>
+                                    <MoneyOff />
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary={transaction.category} secondary={'${transaction.amount} - ${transaction.date}'} />
+                            <ListItemSecondaryAction>
+                                <IconButton edge="end" aria-label="delete" onClick="">
+                                    <Delete />
+                                </IconButton>
+                            </ListItemSecondaryAction>
+                        </ListItem>
                     </Slide>
                 ))}
-        </MUList>
-    )
+        </MUIList>
+    );
 }
 
 export default List

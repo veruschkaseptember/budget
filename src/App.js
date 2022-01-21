@@ -5,7 +5,7 @@ import Main from './components/Main/Main';
 import Details from './components/Details/Details';
 import useStyles from './styles';
 
-const app = () => {
+const App = () => {
     const classes = useStyles();
     return (
         <div>
@@ -24,7 +24,7 @@ const app = () => {
     )
 }
 
-export default app
+export default App
 
 
 //In order to create component used rafce which is the react arrow function export
