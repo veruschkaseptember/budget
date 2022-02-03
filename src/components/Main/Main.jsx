@@ -20,7 +20,7 @@ const Main = () => {
             <Divider />
             <Form  />
         </CardContent>
-        <CardContent className={classes.cardContent}> 
+        <CardContent className={classes.cartContent}> 
             <Grid container spacing={2}>
                 <Grid item xs={12}>
                     <List />
@@ -29,6 +29,6 @@ const Main = () => {
         </CardContent>
     </Card>
     );
-}
+};
 
-export default Main
+export default Main;

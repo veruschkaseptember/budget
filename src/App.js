@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Grid } from '@material-ui/core';
 
 import Main from './components/Main/Main';
@@ -21,10 +21,10 @@ const App = () => {
                 </Grid>
             </Grid>
         </div>
-    )
+    );
 }
-
-export default App
+;
+export default App;
 
 
 //In order to create component used rafce which is the react arrow function export

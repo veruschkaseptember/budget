@@ -1,9 +1,10 @@
 import React, { useState, useContext } from 'react';
 import { TextField, Typography, Grid, Button, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
-import { incomeCategories , expenseCategories} from '../../../constants/categories';
-import { ExpenseTrackerContext } from '../../../context/context';
 import { v4 as uuidv4 } from  'uuid';
+
 import formatDate from '../../../utils/formatDate';
+import { ExpenseTrackerContext } from '../../../context/context';
+import { incomeCategories, expenseCategories} from '../../../constants/categories';
 import useStyles from './style';
 
 
@@ -12,12 +13,12 @@ const initialState = {
     category: '',
     type: 'Income',
     date: formatDate(new Date()),
-}
+};
 
 const Form = () => {
     const classes = useStyles();
-    const [formData, setFormData] = useState(initialState);
     const { addTransaction } = useContext(ExpenseTrackerContext);
+    const [formData, setFormData] = useState(initialState);
     const createTransaction = () => {
         const transaction = { ...formData, amount: Number(formData.amount),  id: uuidv4() }
 
@@ -54,14 +55,14 @@ const Form = () => {
                 </FormControl>
             </Grid>
             <Grid item xs={6}> 
-                <TextField type="number" label="Amount" fullWidth value={formData.amount} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} />
+                <TextField type="number" label="Amount" value={formData.amount} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} fullWidth />
              </Grid>
             <Grid item xs={6}> 
-                <TextField type="date" label="Date" fullWidth value={formData.date} onChange={(e) => setFormData({ ...formData, date: formatDate(e.target.value) })} />
+                <TextField fullWidth label="Date" type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: formatDate(e.target.value) })} />
             </Grid>
-            <Button className={classes.Button} variant="outlined" color="Primary" fullWidth onClick={createTransaction}>Create</Button>
+            <Button className={classes.button} variant="outlined" color="primary" fullWidth onClick={createTransaction}>Create</Button>
         </Grid>
-        )
-    }
+        );
+    };
 
-export default Form
+export default Form;

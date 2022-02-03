@@ -27,9 +27,9 @@ const useTransactions = (title) => {
             backgroundColor:filteredCategories.map((c) => c.color)
         }],
         labels: filteredCategories.map((c) => c.type)
-    }
+    };
 
     return { total, chartData };
-}
+};
 
 export default useTransactions;
