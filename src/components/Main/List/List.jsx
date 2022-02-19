@@ -32,6 +32,6 @@ const List = () => {
                 ))}
         </MUIList>
     );
-}
+};
 
-export default List
+export default List;

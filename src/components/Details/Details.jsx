@@ -22,4 +22,4 @@ const Details = ({ title }) => {
     );
 };
 
-export default Details
+export default Details;

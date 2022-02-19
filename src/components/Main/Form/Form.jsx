@@ -6,7 +6,7 @@ import { useSpeechContext } from '@speechly/react-client';
 import formatDate from '../../../utils/formatDate';
 import { ExpenseTrackerContext } from '../../../context/context';
 import { incomeCategories, expenseCategories} from '../../../constants/categories';
-import useStyles from './style';
+import useStyles from './styles';
 import CustomizedSnackbar from '../../Snackbar/Snackbar';
 
 
@@ -23,6 +23,7 @@ const Form = () => {
     const { segment } = useSpeechContext();
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState(initialState);
+    
     const createTransaction = () => {
         if(Number.isNaN(Number(formData.amount)) || !formData.date.includes('-')) return;
 
@@ -37,11 +38,11 @@ const Form = () => {
         if(segment) {
             if(segment.intent.intent === 'add_expense') {
                 setFormData({ ...formData, type: 'Expense' });
-            } else if (segment.intent.inten === 'add_income') {
+            } else if (segment.intent.intent === 'add_income') {
                 setFormData({ ...formData, type: 'Income' });
-            } else if(segment.isFinal && segment.intent.intent === "create_transaction") {
+            } else if (segment.isFinal && segment.intent.intent === 'create_transaction') {
                 return createTransaction();
-            } else if(segment.isFinal && segment.intent.intent === "cancel_transaction") {
+            } else if (segment.isFinal && segment.intent.intent === 'cancel_transaction') {
                 return setFormData(initialState);
             }
 
@@ -65,6 +66,7 @@ const Form = () => {
                         break;
                 }
             });
+
             if(segment.isFinal && formData.amount && formData.category && formData.type && formData.date) {
                 createTransaction();
             }
@@ -81,7 +83,7 @@ const Form = () => {
             <Grid item xs={12}>
                 <Typography align="center"  variant="subtitle2" gutterBottom>
                             {segment && segment.words.map((w) => w.value).join(" ")}
-                    )}
+                    );
                 </Typography>
             </Grid>
             <Grid item xs={6}>

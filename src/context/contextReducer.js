@@ -5,7 +5,7 @@ const contextReducer = (state, action) =>  {
 
     switch (action.type) {
         case 'DELETE_TRANSACTION':
-            transactions = state.filter((t) => t.id !== action.payload);
+            transactions = state.filter((transaction) => transaction.id !== action.payload);
 
             localStorage.setItem('transactions', JSON.stringify(transactions));
 
@@ -19,7 +19,6 @@ const contextReducer = (state, action) =>  {
         default:
             return state;
     }
-
-}
+};
 
 export default contextReducer;
